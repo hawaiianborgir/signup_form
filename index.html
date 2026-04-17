@@ -7,39 +7,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-wrapper">
+    <div class="card">
+        <img class="card__image" src="shoebill.jpg" alt="Shoebill bird">
+        <div class="card__body">
+            <p class="card__font">Shoebill</p>
+            <img src="" alt="" class="card__logo">
+            <p class="card-credit">This picture is lorem ipsum</p>
+        </div>
+    </div>
+    
+    <div class="content">
         <img src="" alt="">
-        <div class="content-wrapper">
-            <header>
+        <div class="content__wrapper">
+            <header class="content__header">
                 <p>This is a mockup of a sign-up page of the Shoebill Fans Club website. Yes, the Dino Bird with its majestic beak and unbelievable size.</p>
                 <p>Become the dino bird fan now!</p>
             </header>
             
-            <form id="main-form" method="get">
+            <form id="content__form" method="get">
                 <p>Sign-up now for a free shoebill plushie!</p>
-                <div class="form-name">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" name="first-name">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" name="last-name">
+                <div class="form__name">
+                    <label for="form__first-name">First Name</label>
+                    <input type="text" id="form__first-name" name="first-name">
+                    <label for="form__last-name">Last Name</label>
+                    <input type="text" id="form__last-name" name="last-name">
                 </div>
-                <div class="form-mailphone">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone-number">
+                <div class="form__mailphone">
+                    <label for="form__email">Email</label>
+                    <input type="email" id="form__email" name="email">
+                    <label for="form__phone">Phone Number</label>
+                    <input type="tel" id="form__phone" name="phone-number">
                 </div>
-                <div class="form-password">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
-                    <label for="password-confirmation"></label>
-                    <input type="password" id="password-confirmation" name="password-confirmation">
+                <div class="form__password">
+                    <label for="form__password">Password</label>
+                    <input type="password" id="form__password" name="password">
+                    <label for="form__password-confirmation"></label>
+                    <input type="password" id="form__password-confirmation" name="password-confirmation">
                 </div>
             </form>
             
-            <footer>
-                <button type="submit" form="main-form">Create Account</button>
-                <p>Already have an account? <a href="https://youtu.be/xvFZjo5PgG0?si=3H4lBQNop5w019rL" target="_blank" rel="noopener noreferrer">Log in</a></p>
+            <footer class="footer">
+                <button class="footer__button" type="submit" form="main-form">Create Account</button>
+                <p class="footer__text">Already have an account? <a href="https://youtu.be/xvFZjo5PgG0?si=3H4lBQNop5w019rL" target="_blank" rel="noopener noreferrer">Log in</a></p>
             </footer>
         </div>
     </div>
