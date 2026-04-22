@@ -56,35 +56,56 @@ h1, h2, h3, h4, h5, h6 {
 /* --RESET ENDS HERE-- */
 
 body {
+  width: 100vw;
+  height: 100vh;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
+  border: 3px solid red;
 }
 
 .card {
-  flex-grow: 1;
-  flex-basis: 100px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  /* display: flex; */
 
   position: relative;
+  border: 2px solid green;
 }
 .card__image {
+  width: 90%;
+  height: auto;
+  aspect-ratio: 9/16;
+
+  /* centering trick */
   position: absolute;
-  width: 100%;
+  inset: 0;
+  margin: auto;
+  
   z-index: -1;
 }
 .card__body {
   position: absolute;
-  width: 100%;
+  width: 90%;
   background: black;
   opacity: 0.6;
   color: white;
-  top: 8rem;
+  
+  /* centering trick */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+  
   text-align: center;
   font-size: 1.2rem;
 }
 
 .content {
-  flex-grow: 3;
-  flex-basis: 300px;
+  flex:1.5 ;
+  
+
+  border: 2px solid blue;
 }
