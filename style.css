@@ -122,12 +122,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 25px;
+  gap: 35px;
 
   border: 2px solid blue;
 }
 .content__header {
   border: 2px solid green;
+}
+.content__header > p:first-child {
+  margin-bottom: 20px;
 }
 .content__form {
   border: 2px solid red;
@@ -135,6 +138,7 @@ body {
 .content__footer {
   border: 2px solid green;
 }
+
 
 .form__wrapper {
   display: flex;
@@ -145,6 +149,11 @@ body {
 }
 .form__left-content,
 .form__right-content {
+  margin-top: 20px;
   width: 170px;
   border: 2px solid yellow;
+}
+
+button {
+  margin-bottom: 20px;
 }
