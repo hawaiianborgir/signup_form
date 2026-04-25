@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* --RESET ENDS HERE-- */
 
+
 body {
   background-color: #EAEDF0;
 
@@ -107,6 +108,12 @@ body {
   
   text-align: center;
   font-size: 1.2rem;
+}
+.card__font {
+  font-family: "Sekuya", system-ui;
+  font-size: 35px;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .content{
