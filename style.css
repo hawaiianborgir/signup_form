@@ -127,16 +127,21 @@ body {
   border: 2px solid blue;
 }
 .content__header {
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 .content__header > p:first-child {
   margin-bottom: 20px;
 }
 .content__form {
-  border: 2px solid red;
+  background-color: white;
+
+  padding: 10px 0 25px 0;
+  box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.2);
+
+  /* border: 2px solid red; */
 }
 .content__footer {
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 
