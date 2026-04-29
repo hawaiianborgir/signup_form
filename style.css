@@ -65,27 +65,31 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 1.6rem;
 
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  border: 3px solid red;
+  gap: 50px;  
+  flex-wrap: wrap;
+
+  /* border: 3px solid red; */
 }
 
 .card {
   flex: 1;
-  min-width: 0;
+  min-width: 250px;
+  min-height: 250px;
   overflow: hidden;
-  /* display: flex; */
 
   position: relative;
   border: 2px solid green;
 }
 .card__image {
-  width: 90%;
+  width: 100%;
   height: auto;
   aspect-ratio: 9/16;
   border-radius: 30px;
@@ -99,21 +103,22 @@ body {
 }
 .card__body {
   position: absolute;
-  width: 90%;
+  width: 100%;
   background: black;
   opacity: 0.6;
   color: white;
   
   /* centering trick */
-  top: 50%;
+  top: 44%;
   left: 50%;
-  transform: translate(-50%,50%);
+  transform: translate(-50%,44%);
+  
   
   text-align: center;
 }
 .card__font {
   font-family: "Sekuya", system-ui;
-  font-size: clamp(2rem, 2rem + 2vw, 8rem);
+  font-size: clamp(1.6rem, 1.6rem + 2vw, 8rem);
   font-weight: 400;
   font-style: normal;  
 }
@@ -127,9 +132,10 @@ body {
   justify-content: center;
   gap: 35px;
 
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 .content__header {
+  padding: 0 20px 0 20px;
   /* border: 2px solid green; */
 }
 .content__header > p:first-child {
@@ -137,13 +143,15 @@ body {
 }
 .content__form {
   background-color: white;
+  border-radius: 15px;
 
-  padding: 10px 0 25px 0;
+  padding: 10px 20px 25px 20px;
   box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.2);
 
   /* border: 2px solid red; */
 }
 .content__footer {
+  padding: 0 20px 0 20px;
   /* border: 2px solid green; */
 }
 
@@ -153,15 +161,49 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: stretch;
+  gap: 20px;
   min-width: 400px;
 }
 .form__left-content,
 .form__right-content {
   margin-top: 20px;
-  width: 170px;
-  border: 2px solid yellow;
+  flex-basis: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* border: 2px solid yellow; */
+}
+
+input {
+  margin-bottom: 10px;
 }
 
 button {
   margin-bottom: 20px;
+}
+
+/* SMALL SCREEN SETUP */
+@media screen and (max-width: 766px) {
+  body {
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+  .card{
+    margin-top: 15px;
+    border-radius: 15px;
+  }
+  .card__image {
+      top: 300px;
+    border-radius: 0px;
+  }
+  .card__font {
+    font-size: 5rem;
+  }
+  .card__body {
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%,29%);
+  }
+  
 }
