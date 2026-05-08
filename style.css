@@ -194,7 +194,35 @@ input {
 }
 
 button {
+  width: 150px;
+  height: 50px;
+  padding: 1.2px 2.4px;
+  border: none;
   margin-bottom: 20px;
+
+  background-color: #f1b66e;
+  color: #333333;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+  
+  border-radius: 10px;
+  box-shadow: 11px 11px 10px 2px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+
+  transition: background-color 0.2s, transform 0.1s; 
+}
+button:hover{
+  background-color: #dea866;
+  transform: translateY(-2px);
+}
+button:active{
+  transform: scale(0.98);
+}
+button:focus{
+  outline: 2px solid #333333;
+  outline-offset: 2px;
 }
 
 /* SMALL SCREEN SETUP */
@@ -208,7 +236,7 @@ button {
     border-radius: 15px;
   }
   .card__image {
-      top: 300px;
+    top: 300px;
     border-radius: 0px;
   }
   .card__font {
