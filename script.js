@@ -1,7 +1,7 @@
 const 
     button = document.querySelector('.footer__button'),
     password = document.getElementById('form__password'),
-    confirmPassword = document.getElementById('form__password-confirmation');
+    confirmPassword = document.getElementById('form__password-confirmation'),
     errorMessage = document.querySelector('.error');
 
 function confirmationValue(a, b) {
@@ -23,5 +23,4 @@ button.addEventListener("click", (e) => {
         confirmPassword.style.border = "2px solid red";
         errorMessage.textContent = "Password confirmation does not match."
     }
-    
 })
