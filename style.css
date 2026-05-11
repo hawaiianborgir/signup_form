@@ -86,7 +86,7 @@ body {
   overflow: hidden;
 
   position: relative;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 .card__image {
   width: 100%;
@@ -175,6 +175,7 @@ body {
 }
 .form__left-content,
 .form__right-content {
+  position: relative;
   margin-top: 20px;
   flex-basis: 250px;
 
@@ -189,10 +190,18 @@ label {
   font-weight: bold;
   color: gray;
 }
+.form__right-content > p {
+  position: absolute;
+  top: 160px;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #d25959
+}
 input {
   margin-bottom: 10px;
 }
-
 button {
   width: 150px;
   height: 50px;
