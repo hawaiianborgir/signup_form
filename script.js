@@ -19,8 +19,14 @@ button.addEventListener("click", (e) => {
     
     if (!passStatus) {
         e.preventDefault();
-        password.style.border = "2px solid red";
+        confirmPassword.style.borderRadius = "4px";
         confirmPassword.style.border = "2px solid red";
-        errorMessage.textContent = "Password confirmation does not match."
+        errorMessage.textContent = "Password confirmation does not match.";
     }
+})
+
+confirmPassword.addEventListener("keyup", (e) => {
+    confirmPassword.style.borderRadius = ""
+    confirmPassword.style.border = "";
+    errorMessage.textContent = "";
 })
