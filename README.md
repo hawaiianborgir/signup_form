@@ -1,10 +1,10 @@
-# Shoebill Fans Club — Sign-Up Page
+# 🦤 Shoebill Fans Club — Sign-Up Page
 
 A mockup sign-up page for the **Shoebill Fans Club** — celebrating the majestic dino bird and its legendary beak. Built with vanilla HTML, CSS, and JavaScript.
 
 ---
 
-## Table of Contents
+## 📋 Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -27,8 +27,10 @@ This is a **static front-end mockup** of a fan club sign-up page. It features a 
 
 - **Decorative image card** with an overlay title using the custom *Sekuya* font
 - **Sign-up form** collecting first name, last name, phone number, email, and password
-- **Password validation** — enforces a minimum of 8 characters with at least one uppercase letter, one lowercase letter, and one number
-- **Password confirmation check** via JavaScript, with visual red-border feedback on mismatch
+- **Password pattern validation** — enforces a minimum of 8 characters with at least one uppercase letter, one lowercase letter, and one number
+- **Password confirmation check** via JavaScript, with red-border styling (`.pass--error`) on mismatch
+- **Auto-clearing error state** — the red border and error message clear as soon as the user starts retyping in the confirm password field
+- **Input focus glow** — a subtle box-shadow appears on focused input fields
 - **Responsive layout** that adapts for smaller screens (≤ 766px)
 - **Smooth button interactions** with hover lift and active press animations
 
@@ -39,8 +41,8 @@ This is a **static front-end mockup** of a fan club sign-up page. It features a 
 ```
 project/
 ├── index.html      # Main HTML structure
-├── style.css       # Styling and responsive layout
-├── script.js       # Password confirmation validation logic
+├── style.css       # Styling, responsive layout, and error state classes
+├── script.js       # Password pattern and confirmation validation logic
 └── shoebill.jpg    # Shoebill bird image (required)
 ```
 
@@ -51,7 +53,7 @@ project/
 No build tools or dependencies required. Just open the project in a browser:
 
 1. **Clone or download** the project files into a folder.
-2. Add a `shoebill.jpg` image file to the project root (the card image will not display without it).
+2. Add a `shoebill.jpg` image file to the project root (the card section will be blank without it).
 3. Open `index.html` directly in your browser.
 
 > **Note:** The form uses `method="get"`, so submission data will appear in the URL query string. This is intentional for a mockup/demo context.
@@ -60,18 +62,21 @@ No build tools or dependencies required. Just open the project in a browser:
 
 ## Form Validation
 
-Validation is handled through a combination of **HTML5 native validation** and **JavaScript**.
+Validation is handled through a combination of **HTML5 native validation**, **CSS error classes**, and **JavaScript event listeners**.
 
-| Field              | Validation                                                                 |
-|--------------------|----------------------------------------------------------------------------|
-| First Name         | Required                                                                   |
-| Last Name          | Required                                                                   |
-| Phone Number       | Required, `type="tel"`                                                     |
-| Email              | Required, `type="email"` (browser-native format check)                     |
-| Password           | Required, min 8 chars, must include uppercase, lowercase, and a digit      |
-| Confirm Password   | Must match the Password field (checked via JavaScript on form submission)  |
+| Field            | Validation                                                             | Trigger               |
+|------------------|------------------------------------------------------------------------|-----------------------|
+| First Name       | Required                                                               | Native HTML5          |
+| Last Name        | Required                                                               | Native HTML5          |
+| Phone Number     | Required, `type="tel"`                                                 | Native HTML5          |
+| Email            | Required, `type="email"` (browser-native format check)                 | Native HTML5          |
+| Password         | Min 8 chars, must include uppercase, lowercase, and a digit            | On button click via JS|
+| Confirm Password | Must match the Password field                                          | On form submit via JS |
 
-When passwords do not match, both password fields are highlighted with a red border and an error message is displayed below the confirm field.
+### Error State Behaviour
+
+- **Password field** — gains the `.pass--error` class (red border) when the pattern check fails on button click. The error clears automatically as the user edits the field to a valid value.
+- **Confirm Password field** — gains the `.pass--error` class and shows an inline error message if the passwords don't match on submit. Both clear as soon as the user starts retyping.
 
 ---
 
@@ -89,8 +94,8 @@ Font sizes throughout use `clamp()` for fluid scaling between viewport sizes.
 ## Technologies Used
 
 - **HTML5** — Semantic structure and native form validation
-- **CSS3** — Flexbox layout, CSS reset, `clamp()`, media queries, transitions
-- **JavaScript (Vanilla)** — Password match validation on submit
+- **CSS3** — Flexbox layout, CSS reset, `clamp()`, media queries, transitions, and a `.pass--error` utility class for JS-driven error styling
+- **JavaScript (Vanilla)** — Password pattern validation and confirmation match check, with dynamic class toggling and error message rendering
 - **Google Fonts** — [Sekuya](https://fonts.google.com/) for the card title
 
 ---
