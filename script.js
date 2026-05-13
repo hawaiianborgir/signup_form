@@ -1,5 +1,5 @@
-const 
-    button = document.querySelector('.footer__button'),
+const
+    button = document.querySelector('button'),
     password = document.getElementById('form__password'),
     confirmPassword = document.getElementById('form__password-confirmation'),
     errorMessage = document.querySelector('.error'),
@@ -20,12 +20,23 @@ mainForm.addEventListener("submit", (e) => {
     
     if (!passStatus) {
         e.preventDefault();
-        confirmPassword.classList.add("pass--error")
+        confirmPassword.classList.add("pass--error");
         errorMessage.textContent = "Password confirmation does not match.";
     }
 })
 
-confirmPassword.addEventListener("keyup", (e) => {
+confirmPassword.addEventListener("keydown", (e) => {
     confirmPassword.classList.remove("pass--error")
     errorMessage.textContent = "";
+})
+
+button.addEventListener("click", (e) => {
+    if (password.validity.patternMismatch) {
+        password.classList.add("pass--error");
+    }
+})
+password.addEventListener("input", (e) => {
+    if (!password.validity.patternMismatch) {
+        password.classList.remove("pass--error");
+    }
 })
